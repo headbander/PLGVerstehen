@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Professionelle Lerngemeinschaften | Gemeinsam besser unterrichten</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/interactive-cards.css">
+    <script src="js/main.js" defer></script>
+    <script src="js/interactive-cards.js" defer></script>
+    <script src="js/quiz.js" defer></script>
+    <script src="js/audio-player.js" defer></script>
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <img src="images/lhb-logo.png" alt="LHB Logo" class="logo">
+            <div class="title-container">
+                <h1>Professionelle Lerngemeinschaften</h1>
+            </div>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#home">Start</a></li>
+                <li><a href="#what-are-plgs">Was sind PLGs?</a></li>
+                <li><a href="#criteria">Die 5 Kriterien</a></li>
+                <li><a href="#values">Die 2 Leitwerte</a></li>
+                <li><a href="#self-test">PLG-Selbsttest</a></li>
+                <li><a href="#implementation">Implementierung</a></li>
+                <li><a href="#resources">Ressourcen</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="home" class="hero">
+            <div class="hero-content">
+                <h2>Gemeinsam besser unterrichten</h2>
+                <p>Professionelle Lerngemeinschaften fördern den kollegialen Austausch und die kontinuierliche Unterrichtsentwicklung. Entdecken Sie, wie PLGs Ihre Schule nachhaltig verbessern können.</p>
+                <div class="hero-buttons">
+                    <a href="#what-are-plgs" class="btn primary">Mehr erfahren</a>
+                    <a href="#self-test" class="btn secondary">PLG-Selbsttest starten</a>
+                </div>
+            </div>
+            <div class="hero-media">
+                <div class="audio-player-container">
+                    <h3>PLG kompakt erklärt</h3>
+                    <div class="audio-player">
+                        <audio id="podcast" src="audio/plg-podcast.wav"></audio>
+                        <button class="play-button" aria-label="Audio abspielen"></button>
+                        <div class="progress-container">
+                            <div class="progress-bar">
+                                <div class="progress"></div>
+                            </div>
+                            <div class="time-display">
+                                <span class="current-time">0:00</span>
+                                <span class="duration">12:52</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="overview" class="overview">
+            <h2>PLGs auf einen Blick</h2>
+            <p>Professionelle Lerngemeinschaften basieren auf fünf Kriterien und zwei Leitwerten. Klicken Sie auf die Karten, um mehr zu erfahren.</p>
+            
+            <div class="interactive-cards">
+                <div class="card-container criteria-cards">
+                    <div class="card" data-target="#criteria-dialog">
+                        <div class="card-icon">
+                            <img src="images/dialog-icon.svg" alt="Dialog Icon">
+                        </div>
+                        <h3>Reflektierender Dialog</h3>
+                        <p>Klicken für mehr Infos</p>
+                    </div>
+                    
+                    <div class="card" data-target="#deprivatization-dialog">
+                        <div class="card-icon">
+                            <img src="images/door-icon.svg" alt="Tür Icon">
+                        </div>
+                        <h3>De-Privatisierung</h3>
+                        <p>Klicken für mehr Infos</p>
+                    </div>
+                    
+                    <div class="card" data-target="#learning-focus-dialog">
+                        <div class="card-icon">
+                            <img src="images/learning-icon.svg" alt="Lernen Icon">
+                        </div>
+                        <h3>Fokus auf Lernen</h3>
+                        <p>Klicken für mehr Infos</p>
+                    </div>
+                    
+                    <div class="card" data-target="#collaboration-dialog">
+                        <div class="card-icon">
+                            <img src="images/collaboration-icon.svg" alt="Zusammenarbeit Icon">
+                        </div>
+                        <h3>Zusammenarbeit</h3>
+                        <p>Klicken für mehr Infos</p>
+                    </div>
+                    
+                    <div class="card" data-target="#goals-dialog">
+                        <div class="card-icon">
+                            <img src="images/goals-icon.svg" alt="Ziele Icon">
+                        </div>
+                        <h3>Gemeinsame Ziele</h3>
+                        <p>Klicken für mehr Infos</p>
+                    </div>
+                </div>
+                
+                <div class="card-container values-cards">
+                    <div class="card" data-target="#error-tolerance-dialog">
+                        <div class="card-icon">
+                            <img src="images/error-icon.svg" alt="Fehler Icon">
+                        </div>
+                        <h3>Fehlertoleranz</h3>
+                        <p>Klicken für mehr Infos</p>
+                    </div>
+                    
+                    <div class="card" data-target="#help-culture-dialog">
+                        <div class="card-icon">
+                            <img src="images/help-icon.svg" alt="Hilfe Icon">
+                        </div>
+                        <h3>Hilfekultur</h3>
+                        <p>Klicken für mehr Infos</p>
+                    </div>
+                </div>
+                
+                <div class="card-navigation">
+                    <button class="tab-btn active" data-target=".criteria-cards">Die 5 Kriterien</button>
+                    <button class="tab-btn" data-target=".values-cards">Die 2 Leitwerte</button>
+                </div>
+            </div>
+            
+            <!-- Dialog-Inhalte für die Karten -->
+            <div id="criteria-dialog" class="dialog-content">
+                <h3>Reflektierender Dialog</h3>
+                <p>Lehrkräfte tauschen sich regelmäßig über ihre Unterrichtspraxis aus, reflektieren gemeinsam und geben sich gegenseitig Feedback. Dieser Dialog fördert die professionelle Entwicklung und schafft eine Kultur des gemeinsamen Lernens.</p>
+                <a href="#criteria" class="btn secondary">Mehr zu den Kriterien</a>
+            </div>
+            
+            <div id="deprivatization-dialog" class="dialog-content">
+                <h3>De-Privatisierung</h3>
+                <p>Unterricht wird nicht als private Angelegenheit betrachtet, sondern durch gegenseitige Hospitationen, gemeinsame Planung und Reflexion geöffnet. Dies fördert Transparenz und kollegiales Lernen.</p>
+                <a href="#criteria" class="btn secondary">Mehr zu den Kriterien</a>
+            </div>
+            
+            <div id="learning-focus-dialog" class="dialog-content">
+                <h3>Fokus auf Lernen</h3>
+                <p>Im Mittelpunkt steht das Lernen der Schüler*innen, nicht das Lehren. Die gemeinsame Analyse von Lernprozessen und -ergebnissen hilft, den Unterricht gezielt zu verbessern.</p>
+                <a href="#criteria" class="btn secondary">Mehr zu den Kriterien</a>
+            </div>
+            
+            <div id="collaboration-dialog" class="dialog-content">
+                <h3>Zusammenarbeit</h3>
+                <p>Lehrkräfte arbeiten eng zusammen, planen gemeinsam Unterricht, entwickeln Materialien und reflektieren ihre Erfahrungen. Diese Kooperation geht über einen bloßen Austausch hinaus.</p>
+                <a href="#criteria" class="btn secondary">Mehr zu den Kriterien</a>
+            </div>
+            
+            <div id="goals-dialog" class="dialog-content">
+                <h3>Gemeinsame Ziele</h3>
+                <p>Die PLG entwickelt gemeinsame, verbindliche Ziele für ihre Arbeit. Diese geteilte Vision schafft Orientierung und Verbindlichkeit für alle Beteiligten.</p>
+                <a href="#criteria" class="btn secondary">Mehr zu den Kriterien</a>
+            </div>
+            
+            <div id="error-tolerance-dialog" class="dialog-content">
+                <h3>Fehlertoleranz</h3>
+                <p>In einer PLG dürfen Fehler gemacht werden, sie werden als Lernchancen verstanden. Diese Offenheit fördert Innovation und kontinuierliche Verbesserung.</p>
+                <a href="#values" class="btn secondary">Mehr zu den Leitwerten</a>
+            </div>
+            
+            <div id="help-culture-dialog" class="dialog-content">
+                <h3>Hilfekultur</h3>
+                <p>Die Mitglieder einer PLG unterstützen sich gegenseitig und pflegen einen wertschätzenden Umgang miteinander. Diese Kultur der gegenseitigen Hilfe stärkt das Vertrauen und die Zusammenarbeit.</p>
+                <a href="#values" class="btn secondary">Mehr zu den Leitwerten</a>
+            </div>
+        </section>
+
+        <section id="what-are-plgs" class="content-section">
+            <h2>Was sind Professionelle Lerngemeinschaften?</h2>
+            
+            <div class="two-columns">
+                <div class="column">
+                    <h3>Definition</h3>
+                    <blockquote>
+                        <p>"Professionelle Lerngemeinschaften verstehen sich als sich selbst organisierende Teams, die mit einem Minimum externer Kontrolle auskommen und in denen Pädagoginnen und Pädagogen in professioneller Weise miteinander arbeiten und voneinander lernen."</p>
+                        <cite>Hans-Günter Rolff</cite>
+                    </blockquote>
+                    <p>PLGs sind Gruppen von Lehrkräften, die gemeinsam an der Verbesserung ihres Unterrichts arbeiten. Sie teilen ihre Erfahrungen, reflektieren ihre Praxis und entwickeln gemeinsam neue Ansätze.</p>
+                </div>
+                
+                <div class="column">
+                    <h3>Wirkungen von PLGs</h3>
+                    <ul>
+                        <li>Höhere Arbeitszufriedenheit der Lehrkräfte</li>
+                        <li>Bessere Lernergebnisse der Schüler*innen</li>
+                        <li>Kontinuierliche Professionalisierung</li>
+                        <li>Entlastung durch geteilte Verantwortung</li>
+                        <li>Nachhaltige Schulentwicklung</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="criteria" class="content-section">
+            <h2>Die 5 Kriterien einer PLG</h2>
+            <p>Nach Bonsen und Rolff (2006) zeichnen sich Professionelle Lerngemeinschaften durch fünf zentrale Kriterien aus. Klicken Sie auf die Tabs, um mehr zu erfahren.</p>
+            
+            <div class="tabs-container">
+                <div class="tabs">
+                    <button class="tab-btn active" data-tab="tab1">Reflektierender Dialog</button>
+                    <button class="tab-btn" data-tab="tab2">De-Privatisierung</button>
+                    <button class="tab-btn" data-tab="tab3">Fokus auf Lernen</button>
+                    <button class="tab-btn" data-tab="tab4">Zusammenarbeit</button>
+                    <button class="tab-btn" data-tab="tab5">Gemeinsame Ziele</button>
+                </div>
+                
+                <div class="tab-content">
+                    <div id="tab1" class="tab-pane active">
+                        <h3>Reflektierender Dialog</h3>
+                        <p>Lehrerinnen und Lehrer reflektieren und diskutieren miteinander ihr Unterrichtshandeln und spezifische Unterrichtsmethoden. Dieser regelmäßige Austausch fördert die professionelle Entwicklung und schafft eine Kultur des gemeinsamen Lernens.</p>
+                        
+                        <h4>Praxisbeispiel</h4>
+                        <p>Eine Gruppe von Mathematiklehrkräften trifft sich alle zwei Wochen, um über neue Methoden zur Vermittlung komplexer Konzepte zu diskutieren. Sie reflektieren gemeinsam ihre Erfahrungen und geben sich gegenseitig Feedback.</p>
+                        
+                        <h4>Reflexionsfragen</h4>
+                        <ul>
+                            <li>Wie regelmäßig tauschen Sie sich mit Kolleg*innen über Ihren Unterricht aus?</li>
+                            <li>Welche Formate nutzen Sie für den reflektierenden Dialog?</li>
+                            <li>Wie offen können Sie über Herausforderungen in Ihrem Unterricht sprechen?</li>
+                        </ul>
+                    </div>
+                    
+                    <div id="tab2" class="tab-pane">
+                        <h3>De-Privatisierung</h3>
+                        <p>Unterricht wird nicht als private Angelegenheit betrachtet, sondern durch gegenseitige Hospitationen, gemeinsame Planung und Reflexion geöffnet. Diese Öffnung ermöglicht kollegiales Feedback und gemeinsames Lernen.</p>
+                        
+                        <h4>Praxisbeispiel</h4>
+                        <p>Die Lehrkräfte einer Jahrgangsstufe führen regelmäßige gegenseitige Hospitationen durch. Nach jeder Hospitation gibt es ein strukturiertes Feedback-Gespräch, bei dem Stärken und Entwicklungspotenziale besprochen werden.</p>
+                        
+                        <h4>Reflexionsfragen</h4>
+                        <ul>
+                            <li>Wie oft öffnen Sie Ihren Unterricht für Kolleg*innen?</li>
+                            <li>Welche Formen der De-Privatisierung praktizieren Sie bereits?</li>
+                            <li>Welche Hürden gibt es für die Öffnung des Unterrichts an Ihrer Schule?</li>
+                        </ul>
+                    </div>
+                    
+                    <div id="tab3" class="tab-pane">
+                        <h3>Fokus auf Lernen</h3>
+                        <p>Im Mittelpunkt steht das Lernen der Schüler*innen, nicht das Lehren. Die gemeinsame Analyse von Lernprozessen und -ergebnissen hilft, den Unterricht gezielt zu verbessern und an die Bedürfnisse der Lernenden anzupassen.</p>
+                        
+                        <h4>Praxisbeispiel</h4>
+                        <p>Eine PLG analysiert regelmäßig Schülerarbeiten, um Lernfortschritte und -hindernisse zu identifizieren. Auf Basis dieser Analyse werden gemeinsam Unterrichtskonzepte angepasst und neue Methoden entwickelt.</p>
+                        
+                        <h4>Reflexionsfragen</h4>
+                        <ul>
+                            <li>Wie systematisch analysieren Sie die Lernprozesse Ihrer Schüler*innen?</li>
+                            <li>Welche Daten nutzen Sie, um das Lernen zu erfassen?</li>
+                            <li>Wie passen Sie Ihren Unterricht an die Ergebnisse dieser Analysen an?</li>
+                        </ul>
+                    </div>
+                    
+                    <div id="tab4" class="tab-pane">
+                        <h3>Zusammenarbeit</h3>
+                        <p>Lehrkräfte arbeiten eng zusammen, planen gemeinsam Unterricht, entwickeln Materialien und reflektieren ihre Erfahrungen. Diese Kooperation geht über einen bloßen Austausch hinaus und führt zu einer geteilten Verantwortung für das Lernen aller Schüler*innen.</p>
+                        
+                        <h4>Praxisbeispiel</h4>
+                        <p>Ein Jahrgangsteam plant gemeinsam eine Unterrichtseinheit, erstellt alle Materialien zusammen und führt die Einheit parallel durch. Anschließend werden die Erfahrungen ausgetauscht und die Materialien überarbeitet.</p>
+                        
+                        <h4>Reflexionsfragen</h4>
+                        <ul>
+                            <li>Wie intensiv ist die Zusammenarbeit in Ihrem Team?</li>
+                            <li>Welche Bereiche umfasst Ihre Kooperation (Planung, Durchführung, Reflexion)?</li>
+                            <li>Wie könnte die Zusammenarbeit in Ihrem Team vertieft werden?</li>
+                        </ul>
+                    </div>
+                    
+                    <div id="tab5" class="tab-pane">
+                        <h3>Gemeinsame Ziele</h3>
+                        <p>Die PLG entwickelt gemeinsame, verbindliche Ziele für ihre Arbeit. Diese geteilte Vision schafft Orientierung und Verbindlichkeit für alle Beteiligten und fokussiert die gemeinsamen Anstrengungen.</p>
+                        
+                        <h4>Praxisbeispiel</h4>
+                        <p>Eine PLG zum Thema "Digitalisierung" hat gemeinsam konkrete Ziele für das Schuljahr formuliert, z.B. die Entwicklung eines Medienkonzepts und die Erprobung bestimmter digitaler Tools. Diese Ziele werden regelmäßig überprüft und angepasst.</p>
+                        
+                        <h4>Reflexionsfragen</h4>
+                        <ul>
+                            <li>Welche gemeinsamen Ziele verfolgt Ihr Team?</li>
+                            <li>Wie wurden diese Ziele entwickelt?</li>
+                            <li>Wie überprüfen Sie die Erreichung Ihrer Ziele?</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="values" class="content-section">
+            <h2>Die 2 Leitwerte einer PLG</h2>
+            <p>Neben den fünf Kriterien sind zwei Leitwerte für das Gelingen einer Professionellen Lerngemeinschaft entscheidend.</p>
+            
+            <div class="flip-cards">
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <h3>Fehlertoleranz</h3>
+                            <p>Klicken Sie, um mehr zu erfahren</p>
+                        </div>
+                        <div class="flip-card-back">
+                            <h3>Fehlertoleranz</h3>
+                            <p>Lernräume brauchen die Freiheit zum Irrtum. In einer PLG dürfen Fehler gemacht werden, sie werden als Lernchancen verstanden.</p>
+                            <p>Fehlertoleranz bedeutet:</p>
+                            <ul>
+                                <li>Offenheit für neue Wege</li>
+                                <li>Mut zum Experimentieren</li>
+                                <li>Konstruktiver Umgang mit Misserfolgen</li>
+                                <li>Gemeinsames Lernen aus Fehlern</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <h3>Hilfekultur</h3>
+                            <p>Klicken Sie, um mehr zu erfahren</p>
+                        </div>
+                        <div class="flip-card-back">
+                            <h3>Hilfekultur</h3>
+                            <p>Solidarisches Miteinander als Fundament kollegialen Lernens. In einer PLG unterstützen sich die Mitglieder gegenseitig.</p>
+                            <p>Hilfekultur bedeutet:</p>
+                            <ul>
+                                <li>Bereitschaft, um Hilfe zu bitten</li>
+                                <li>Offenheit, Hilfe anzubieten</li>
+                                <li>Gegenseitige Unterstützung</li>
+                                <li>Wertschätzender Umgang miteinander</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="culture-assessment">
+                <h3>Wie steht es um Ihre Schulkultur?</h3>
+                <p>Bewerten Sie die folgenden Aussagen auf einer Skala von 1 (trifft gar nicht zu) bis 5 (trifft voll zu).</p>
+                <!-- Hier könnte ein interaktives Bewertungstool eingefügt werden -->
+            </div>
+        </section>
+
+        <section id="self-test" class="content-section">
+            <h2>PLG-Selbsttest</h2>
+            <p>Wie weit ist Ihre Arbeitsgruppe auf dem Weg zur Professionellen Lerngemeinschaft? Machen Sie den Test und erhalten Sie eine individuelle Auswertung mit konkreten Handlungsempfehlungen.</p>
+            
+            <div class="quiz-container">
+                <div class="quiz-progress">
+                    <span class="current-question">Frage 1 von 10</span>
+                    <div class="progress-bar">
+                        <div class="progress" style="width: 10%;"></div>
+                    </div>
+                </div>
+                
+                <div class="quiz-content">
+                    <div class="question-container active" data-question="1">
+                        <h3>In unserer Arbeitsgruppe...</h3>
+                        <p>...tauschen wir uns regelmäßig über unseren Unterricht aus.</p>
+                        <div class="answer-options">
+                            <label class="answer-option">
+                                <input type="radio" name="q1" value="1">
+                                <span class="option-text">trifft gar nicht zu</span>
+                            </label>
+                            <label class="answer-option">
+                                <input type="radio" name="q1" value="2">
+                                <span class="option-text">trifft eher nicht zu</span>
+                            </label>
+                            <label class="answer-option">
+                                <input type="radio" name="q1" value="3">
+                                <span class="option-text">teils/teils</span>
+                            </label>
+                            <label class="answer-option">
+                                <input type="radio" name="q1" value="4">
+                                <span class="option-text">trifft eher zu</span>
+                            </label>
+                            <label class="answer-option">
+                                <input type="radio" name="q1" value="5">
+                                <span class="option-text">trifft voll zu</span>
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <!-- Weitere Fragen würden hier folgen -->
+                    
+                    <div class="quiz-navigation">
+                        <button class="btn secondary prev-question" disabled>Zurück</button>
+                        <button class="btn primary next-question">Weiter</button>
+                        <button class="btn primary submit-quiz" style="display: none;">Auswerten</button>
+                    </div>
+                </div>
+                
+                <div class="quiz-results" style="display: none;">
+                    <h3>Ihre Ergebnisse</h3>
+                    <div class="results-chart">
+                        <!-- Hier würde ein Diagramm mit den Ergebnissen angezeigt -->
+                    </div>
+                    <div class="results-interpretation">
+                        <!-- Hier würde eine Interpretation der Ergebnisse angezeigt -->
+                    </div>
+                    <button class="btn primary restart-quiz">Test wiederholen</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="implementation" class="content-section">
+            <h2>Implementierung von PLGs</h2>
+            <p>Die Einführung von Professionellen Lerngemeinschaften ist ein Prozess, der Zeit und Unterstützung benötigt. Hier finden Sie einen Leitfaden für die schrittweise Implementierung.</p>
+            
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-marker">1</div>
+                    <div class="timeline-content">
+                        <h3>Sensibilisierung</h3>
+                        <p>Gemeinsames Verständnis von PLGs im Kollegium schaffen und Interesse wecken.</p>
+                        <ul>
+                            <li>Pädagogischer Tag zum Thema PLGs</li>
+                            <li>Literatur und Materialien bereitstellen</li>
+                            <li>Besuch von Schulen mit etablierten PLGs</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-marker">2</div>
+                    <div class="timeline-content">
+                        <h3>Pilotierung</h3>
+                        <p>Erste Erfahrungen mit PLGs sammeln und Strukturen erproben.</p>
+                        <ul>
+                            <li>Pilotgruppe(n) bilden</li>
+                            <li>Klare Ziele und Arbeitsweise vereinbaren</li>
+                            <li>Regelmäßige Treffen im Stundenplan verankern</li>
+                            <li>Dokumentationsformen entwickeln</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-marker">3</div>
+                    <div class="timeline-content">
+                        <h3>Kompetenzen entwickeln</h3>
+                        <p>Notwendige Fähigkeiten für erfolgreiche PLG-Arbeit aufbauen.</p>
+                        <ul>
+                            <li>Fortbildungen zu Feedback und Reflexion</li>
+                            <li>Methoden für den reflektierenden Dialog einüben</li>
+                            <li>Hospitationskonzepte entwickeln</li>
+                            <li>Moderationskompetenzen stärken</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-marker">4</div>
+                    <div class="timeline-content">
+                        <h3>Erfolge sichtbar machen</h3>
+                        <p>Ergebnisse und Erfahrungen der Pilotgruppe(n) im Kollegium teilen.</p>
+                        <ul>
+                            <li>Regelmäßige Berichte in Konferenzen</li>
+                            <li>Präsentation von entwickelten Materialien</li>
+                            <li>Dokumentation von Erfolgsgeschichten</li>
+                            <li>Offene Treffen für interessierte Kolleg*innen</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-marker">5</div>
+                    <div class="timeline-content">
+                        <h3>Ausweitung und Verankerung</h3>
+                        <p>PLGs als festen Bestandteil der Schulkultur etablieren.</p>
+                        <ul>
+                            <li>Weitere PLGs gründen</li>
+                            <li>PLGs im Schulprogramm verankern</li>
+                            <li>System von PLG-Koordinator*innen etablieren</li>
+                            <li>Regelmäßige Evaluation und Weiterentwicklung</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="resources" class="content-section">
+            <h2>Ressourcen</h2>
+            <p>Hier finden Sie Materialien und Literatur zur Vertiefung des Themas Professionelle Lerngemeinschaften.</p>
+            
+            <div class="resources-container">
+                <div class="resource-category">
+                    <h3>Materialien</h3>
+                    <ul class="resource-list">
+                        <li>
+                            <a href="pdfs/leitfaden_plg.pdf" target="_blank">
+                                <span class="resource-icon pdf"></span>
+                                <span class="resource-title">Leitfaden zur Einführung von PLGs</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="pdfs/beobachtungsbogen.pdf" target="_blank">
+                                <span class="resource-icon pdf"></span>
+                                <span class="resource-title">Beobachtungsbogen für kollegiale Hospitationen</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="pdfs/reflexionsbogen.pdf" target="_blank">
+                                <span class="resource-icon pdf"></span>
+                                <span class="resource-title">Reflexionsbogen für PLG-Treffen</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="pdfs/checkliste.pdf" target="_blank">
+                                <span class="resource-icon pdf"></span>
+                                <span class="resource-title">Checkliste für PLG-Koordinator*innen</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="resource-category">
+                    <h3>Literatur</h3>
+                    <ul class="resource-list literature">
+                        <li>Bonsen, Martin; Rolff, Hans-Günter (2006) Professionelle Lerngemeinschaften von Lehrerinnen und Lehrern Zeitschrift für Pädagogik 52 (2006) 2, S. 167-184</li>
+                        <li>Brägger, Gerold; Posse; Norbert (2017) Schulleitung und paedagogische Leadership <a href="https://www.schulentwicklung.nrw.de/referenzrahmen/rr_datei_download.php?dateiid=3510" target="_blank">Link</a>, (letzter Zugriff am 13.05.2025)</li>
+                        <li>Buhren, Claus (2018) Teamarbeit in ihrer produktivsten Form. <a href="https://deutsches-schulportal.de/expertenstimmen/professionelle-lerngemeinschaften-teamarbeit-in-ihrer-produktivsten-form/" target="_blank">Link</a> (letzter Zugriff am 11.05.2025)</li>
+                        <li>DuFour, R.; Eaker, R. (1998) Professional Learning Communities at Work. Best Practices for Enhancing Student Achievement. Bloomington: National Education Service.</li>
+                        <li>Kansteiner, Katja; Welther, Sabine; Schmid, Susanne (2023) Professionelle Lerngemeinschaften für Schulleitungen und Lehrkräfte. Weinheim, Beltz</li>
+                        <li>METHODENKARTEI DER UNI OLDENBURG: <a href="https://www.methodenkartei.uni-oldenburg.de/uni_methode/world-cafe/" target="_blank">Link</a>, (letzter Zugriff am 13.05.2025)</li>
+                        <li>MINISTERIUM FÜR SCHULE UND BILDUNG DES LANDES NORDRHEIN-WESTFALEN (2021) Handreichung zur Integration digitaler Schlüsselkompetenzen in die Berufliche Bildung. <a href="https://broschüren.nrw/fileadmin/digitale-schluesselkompetenzen/pdf/Integration-digitaler-Schluesselkompetenzen.pdf" target="_blank">Link</a> (12.03.2023) Folgend zitiert als: Handreichung zur Integration digitaler Schlüsselkompetenzen in die Berufliche Bildung</li>
+                        <li>MINISTERIUM FÜR SCHULE UND BILDUNG DES LANDES NORDRHEIN-WESTFALEN (2025) Eckpunkte zur Stärkung der Schulleitungen in Nordrhein-Westfalen - Zwischenbericht Januar 2025. <a href="https://www.schulministerium.nrw/system/files/media/document/file/2025-01-24_eckpunkte-zur-staerkung-der-schulleitungen.pdf" target="_blank">Link</a> (12.05.2025) Folgend zitiert als: Eckpunkte zur Stärkung der Schulleitungen in Nordrhein-Westfalen</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="faq" class="content-section">
+            <h2>Häufig gestellte Fragen</h2>
+            
+            <div class="accordion">
+                <div class="accordion-item">
+                    <button class="accordion-header">
+                        Wie unterscheiden sich PLGs von anderen Formen der Zusammenarbeit?
+                        <span class="accordion-icon"></span>
+                    </button>
+                    <div class="accordion-content">
+                        <p>PLGs zeichnen sich durch eine besonders intensive und systematische Form der Zusammenarbeit aus. Im Gegensatz zu lockeren Kooperationen oder reinen Austauschgruppen sind PLGs durch die fünf Kriterien (reflektierender Dialog, De-Privatisierung, Fokus auf Lernen, Zusammenarbeit, gemeinsame Ziele) und die zwei Leitwerte (Fehlertoleranz, Hilfekultur) gekennzeichnet. Die Zusammenarbeit ist verbindlicher, tiefgehender und stärker auf die Verbesserung des Unterrichts und des Lernens ausgerichtet.</p>
+                    </div>
+                </div>
+                
+                <div class="accordion-item">
+                    <button class="accordion-header">
+                        Wie viel Zeit benötigt die Arbeit in einer PLG?
+                        <span class="accordion-icon"></span>
+                    </button>
+                    <div class="accordion-content">
+                        <p>Für eine effektive PLG-Arbeit sollten regelmäßige Treffen von mindestens 90 Minuten alle zwei bis drei Wochen eingeplant werden. Hinzu kommt Zeit für Vor- und Nachbereitung, gegenseitige Hospitationen und die Umsetzung vereinbarter Maßnahmen. Langfristig führt die PLG-Arbeit jedoch oft zu einer Zeitersparnis durch geteilte Materialien, gemeinsame Unterrichtsentwicklung und gegenseitige Unterstützung.</p>
+                    </div>
+                </div>
+                
+                <div class="accordion-item">
+                    <button class="accordion-header">
+                        Welche Rolle spielt die Schulleitung bei der Einführung von PLGs?
+                        <span class="accordion-icon"></span>
+                    </button>
+                    <div class="accordion-content">
+                        <p>Die Schulleitung spielt eine entscheidende Rolle für den Erfolg von PLGs. Sie schafft förderliche Rahmenbedingungen (Zeit, Räume, Ressourcen), zeigt Wertschätzung für die PLG-Arbeit, ist Vorbild für eine offene Feedback- und Lernkultur, bindet PLGs in Schulentwicklungsprozesse ein und unterstützt bei der Überwindung von Hindernissen. Gleichzeitig sollte sie den PLGs ausreichend Autonomie für ihre Selbstorganisation gewähren.</p>
+                    </div>
+                </div>
+                
+                <div class="accordion-item">
+                    <button class="accordion-header">
+                        Wie können Widerstände gegen PLGs überwunden werden?
+                        <span class="accordion-icon"></span>
+                    </button>
+                    <div class="accordion-content">
+                        <p>Widerstände gegen PLGs können durch verschiedene Maßnahmen überwunden werden: Freiwilligkeit bei der Teilnahme garantieren, Bedenken ernst nehmen und offen ansprechen, Erfolge sichtbar machen, schrittweise vorgehen und mit einer Pilotgruppe starten, klare Ziele und Erwartungen formulieren, ausreichend Zeit und Ressourcen bereitstellen und die Vorteile für die eigene Arbeit verdeutlichen.</p>
+                    </div>
+                </div>
+                
+                <div class="accordion-item">
+                    <button class="accordion-header">
+                        Wie können PLGs nachhaltig etabliert werden?
+                        <span class="accordion-icon"></span>
+                    </button>
+                    <div class="accordion-content">
+                        <p>Für eine nachhaltige Etablierung von PLGs sind folgende Faktoren wichtig: Strukturelle Verankerung im Stundenplan und Schulprogramm, regelmäßige Reflexion und Weiterentwicklung der PLG-Arbeit, Qualifizierung der PLG-Mitglieder, Dokumentation und Wissensmanagement, Vernetzung mit anderen PLGs innerhalb und außerhalb der Schule, Unterstützung durch die Schulleitung und Anerkennung der PLG-Arbeit im Kollegium.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">
+                <img src="images/lhb-logo.png" alt="LHB Logo" class="logo">
+            </div>
+            
+            <div class="footer-contact">
+                <h3>Kontakt</h3>
+                <p>Haben Sie Fragen oder Anregungen? Kontaktieren Sie mich gerne.</p>
+                <p><a href="mailto:garvert@lhb-do.de">garvert@lhb-do.de</a></p>
+            </div>
+            
+            <div class="footer-nav">
+                <h3>Navigation</h3>
+                <ul>
+                    <li><a href="#home">Start</a></li>
+                    <li><a href="#what-are-plgs">Was sind PLGs?</a></li>
+                    <li><a href="#criteria">Die 5 Kriterien</a></li>
+                    <li><a href="#values">Die 2 Leitwerte</a></li>
+                    <li><a href="#self-test">PLG-Selbsttest</a></li>
+                    <li><a href="#implementation">Implementierung</a></li>
+                    <li><a href="#resources">Ressourcen</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2025 Landesbildungszentrum. Alle Rechte vorbehalten.</p>
+        </div>
+    </footer>
+
+    <div class="overlay" id="overlay"></div>
+</body>
+</html>

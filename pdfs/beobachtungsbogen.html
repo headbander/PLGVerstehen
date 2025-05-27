@@ -1,0 +1,702 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beobachtungsbogen für kollegiale Hospitationen</title>
+    <style>
+        @page {
+            margin: 2cm;
+            @top-center {
+                content: "Beobachtungsbogen für kollegiale Hospitationen";
+                font-family: 'Open Sans', sans-serif;
+                font-size: 10pt;
+            }
+            @bottom-center {
+                content: "Seite " counter(page) " von " counter(pages);
+                font-family: 'Open Sans', sans-serif;
+                font-size: 10pt;
+            }
+        }
+        
+        body {
+            font-family: 'Open Sans', sans-serif;
+            line-height: 1.6;
+            color: #2c3e50;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        h1, h2, h3, h4 {
+            font-family: 'Montserrat', sans-serif;
+            color: #2e4b8a;
+            margin-top: 1.5em;
+            margin-bottom: 0.5em;
+        }
+        
+        h1 {
+            font-size: 24pt;
+            text-align: center;
+            border-bottom: 2px solid #2e4b8a;
+            padding-bottom: 10px;
+            margin-bottom: 30px;
+        }
+        
+        h2 {
+            font-size: 18pt;
+            border-bottom: 1px solid #5b77b4;
+            padding-bottom: 5px;
+        }
+        
+        h3 {
+            font-size: 14pt;
+        }
+        
+        h4 {
+            font-size: 12pt;
+            font-style: italic;
+        }
+        
+        p {
+            margin-bottom: 1em;
+        }
+        
+        ul, ol {
+            margin-bottom: 1.5em;
+            padding-left: 20px;
+        }
+        
+        li {
+            margin-bottom: 0.5em;
+        }
+        
+        .box {
+            background-color: #ecf0f1;
+            border-left: 4px solid #2e4b8a;
+            padding: 15px;
+            margin: 20px 0;
+        }
+        
+        .tip {
+            background-color: #e8f4f8;
+            border-left: 4px solid #3498db;
+            padding: 15px;
+            margin: 20px 0;
+        }
+        
+        .warning {
+            background-color: #fff5e6;
+            border-left: 4px solid #f39c12;
+            padding: 15px;
+            margin: 20px 0;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        
+        th, td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: left;
+            vertical-align: top;
+        }
+        
+        th {
+            background-color: #2e4b8a;
+            color: white;
+        }
+        
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        
+        .footer {
+            margin-top: 50px;
+            border-top: 1px solid #ddd;
+            padding-top: 20px;
+            font-size: 10pt;
+            color: #7f8c8d;
+        }
+        
+        .logo {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        
+        .logo img {
+            max-width: 200px;
+            height: auto;
+        }
+        
+        .form-field {
+            margin-bottom: 15px;
+        }
+        
+        .form-field label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        
+        .form-field input[type="text"] {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        
+        .observation-table td {
+            height: 40px;
+        }
+        
+        .rating-scale {
+            display: flex;
+            justify-content: space-between;
+            margin: 10px 0;
+        }
+        
+        .rating-option {
+            text-align: center;
+            width: 18%;
+        }
+        
+        .rating-circle {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            border: 2px solid #2e4b8a;
+            margin-bottom: 5px;
+        }
+        
+        .notes-field {
+            width: 100%;
+            height: 100px;
+            border: 1px solid #ddd;
+            padding: 10px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="logo">
+            <img src="../images/lhb-logo.png" alt="LHB Logo">
+        </div>
+        
+        <h1>Beobachtungsbogen für kollegiale Hospitationen</h1>
+        
+        <div class="box">
+            <p><strong>Dieser Beobachtungsbogen</strong> dient als Instrument für die strukturierte Beobachtung und Reflexion im Rahmen kollegialer Hospitationen in Professionellen Lerngemeinschaften. Er unterstützt den reflektierenden Dialog und die De-Privatisierung des Unterrichts.</p>
+        </div>
+        
+        <h2>1. Allgemeine Informationen</h2>
+        
+        <div class="form-field">
+            <label for="hospitierende">Hospitierende Lehrkraft:</label>
+            <input type="text" id="hospitierende" name="hospitierende">
+        </div>
+        
+        <div class="form-field">
+            <label for="besuchte">Besuchte Lehrkraft:</label>
+            <input type="text" id="besuchte" name="besuchte">
+        </div>
+        
+        <div class="form-field">
+            <label for="datum">Datum und Uhrzeit:</label>
+            <input type="text" id="datum" name="datum">
+        </div>
+        
+        <div class="form-field">
+            <label for="klasse">Klasse/Kurs:</label>
+            <input type="text" id="klasse" name="klasse">
+        </div>
+        
+        <div class="form-field">
+            <label for="fach">Fach:</label>
+            <input type="text" id="fach" name="fach">
+        </div>
+        
+        <div class="form-field">
+            <label for="thema">Thema der Stunde:</label>
+            <input type="text" id="thema" name="thema">
+        </div>
+        
+        <h2>2. Beobachtungsschwerpunkt</h2>
+        
+        <p>Vor der Hospitation sollte ein Beobachtungsschwerpunkt vereinbart werden. Dieser kann aus den folgenden Bereichen gewählt oder individuell festgelegt werden.</p>
+        
+        <div class="form-field">
+            <label for="schwerpunkt">Vereinbarter Beobachtungsschwerpunkt:</label>
+            <input type="text" id="schwerpunkt" name="schwerpunkt">
+        </div>
+        
+        <div class="tip">
+            <h4>Mögliche Beobachtungsschwerpunkte:</h4>
+            <ul>
+                <li>Aktivierung und Beteiligung der Schüler*innen</li>
+                <li>Differenzierung und individuelle Förderung</li>
+                <li>Einsatz digitaler Medien</li>
+                <li>Feedback und Lernbegleitung</li>
+                <li>Klassenführung und Lernklima</li>
+                <li>Strukturierung des Unterrichts</li>
+                <li>Förderung selbstgesteuerten Lernens</li>
+                <li>Sprachsensibler Fachunterricht</li>
+            </ul>
+        </div>
+        
+        <h2>3. Beobachtungen zum vereinbarten Schwerpunkt</h2>
+        
+        <p>Notieren Sie hier Ihre konkreten Beobachtungen zum vereinbarten Schwerpunkt. Beschreiben Sie möglichst genau, was Sie sehen und hören, ohne zu bewerten.</p>
+        
+        <table class="observation-table">
+            <tr>
+                <th>Zeit</th>
+                <th>Beobachtung (beschreibend, nicht bewertend)</th>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+            </tr>
+        </table>
+        
+        <h2>4. Strukturierte Beobachtungskriterien</h2>
+        
+        <p>Die folgenden Kriterien können je nach vereinbartem Schwerpunkt ausgewählt und beobachtet werden. Markieren Sie Ihre Einschätzung auf der Skala.</p>
+        
+        <h3>4.1 Lernklima und Klassenführung</h3>
+        
+        <table>
+            <tr>
+                <th>Kriterium</th>
+                <th>Beobachtung</th>
+            </tr>
+            <tr>
+                <td>Die Lehrkraft schafft eine wertschätzende Atmosphäre.</td>
+                <td>
+                    <div class="rating-scale">
+                        <div class="rating-option">
+                            <div class="rating-circle"></div>
+                            <div>trifft nicht zu</div>
+                        </div>
+                        <div class="rating-option">
+                            <div class="rating-circle"></div>
+                            <div>trifft eher nicht zu</div>
+                        </div>
+                        <div class="rating-option">
+                            <div class="rating-circle"></div>
+                            <div>teils/teils</div>
+                        </div>
+                        <div class="rating-option">
+                            <div class="rating-circle"></div>
+                            <div>trifft eher zu</div>
+                        </div>
+                        <div class="rating-option">
+                            <div class="rating-circle"></div>
+                            <div>trifft zu</div>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>Die Lehrkraft reagiert angemessen auf Störungen.</td>
+                <td>
+                    <div class="rating-scale">
+                        <div class="rating-option">
+                            <div class="rating-circle"></div>
+                            <div>trifft nicht zu</div>
+                        </div>
+                        <div class="rating-option">
+                            <div class="rating-circle"></div>
+                            <div>trifft eher nicht zu</div>
+                        </div>
+                        <div class="rating-option">
+                            <div class="rating-circle"></div>
+                            <div>teils/teils</div>
+                        </div>
+                        <div class="rating-option">
+                            <div class="rating-circle"></div>
+                            <div>trifft eher zu</div>
+                        </div>
+                        <div class="rating-option">
+                            <div class="rating-circle"></div>
+                            <div>trifft zu</div>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>Die Regeln und Routinen sind klar erkennbar.</td>
+                <td>
+                    <div class="rating-scale">
+                        <div class="rating-option">
+                            <div class="rating-circle"></div>
+                            <div>trifft nicht zu</div>
+                        </div>
+                        <div class="rating-option">
+                            <div class="rating-circle"></div>
+                            <div>trifft eher nicht zu</div>
+                        </div>
+                        <div class="rating-option">
+                            <div class="rating-circle"></div>
+                            <div>teils/teils</div>
+                        </div>
+                        <div class="rating-option">
+                            <div class="rating-circle"></div>
+                            <div>trifft eher zu</div>
+                        </div>
+                        <div class="rating-option">
+                            <div class="rating-circle"></div>
+                            <div>trifft zu</div>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+        </table>
+        
+        <h3>4.2 Aktivierung und Beteiligung</h3>
+        
+        <table>
+            <tr>
+                <th>Kriterium</th>
+                <th>Beobachtung</th>
+            </tr>
+            <tr>
+                <td>Die Schüler*innen sind aktiv am Unterricht beteiligt.</td>
+                <td>
+                    <div class="rating-scale">
+                        <div class="rating-option">
+                            <div class="rating-circle"></div>
+                            <div>trifft nicht zu</div>
+                        </div>
+                        <div class="rating-option">
+                            <div class="rating-circle"></div>
+                            <div>trifft eher nicht zu</div>
+                        </div>
+                        <div class="rating-option">
+                            <div class="rating-circle"></div>
+                            <div>teils/teils</div>
+                        </div>
+                        <div class="rating-option">
+                            <div class="rating-circle"></div>
+                            <div>trifft eher zu</div>
+                        </div>
+                        <div class="rating-option">
+                            <div class="rating-circle"></div>
+                            <div>trifft zu</div>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>Die Aufgaben regen zum Denken an.</td>
+                <td>
+                    <div class="rating-scale">
+                        <div class="rating-option">
+                            <div class="rating-circle"></div>
+                            <div>trifft nicht zu</div>
+                        </div>
+                        <div class="rating-option">
+                            <div class="rating-circle"></div>
+                            <div>trifft eher nicht zu</div>
+                        </div>
+                        <div class="rating-option">
+                            <div class="rating-circle"></div>
+                            <div>teils/teils</div>
+                        </div>
+                        <div class="rating-option">
+                            <div class="rating-circle"></div>
+                            <div>trifft eher zu</div>
+                        </div>
+                        <div class="rating-option">
+                            <div class="rating-circle"></div>
+                            <div>trifft zu</div>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>Die Lehrkraft bezieht alle Schüler*innen ein.</td>
+                <td>
+                    <div class="rating-scale">
+                        <div class="rating-option">
+                            <div class="rating-circle"></div>
+                            <div>trifft nicht zu</div>
+                        </div>
+                        <div class="rating-option">
+                            <div class="rating-circle"></div>
+                            <div>trifft eher nicht zu</div>
+                        </div>
+                        <div class="rating-option">
+                            <div class="rating-circle"></div>
+                            <div>teils/teils</div>
+                        </div>
+                        <div class="rating-option">
+                            <div class="rating-circle"></div>
+                            <div>trifft eher zu</div>
+                        </div>
+                        <div class="rating-option">
+                            <div class="rating-circle"></div>
+                            <div>trifft zu</div>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+        </table>
+        
+        <h3>4.3 Strukturierung und Klarheit</h3>
+        
+        <table>
+            <tr>
+                <th>Kriterium</th>
+                <th>Beobachtung</th>
+            </tr>
+            <tr>
+                <td>Der Unterrichtsverlauf ist klar strukturiert.</td>
+                <td>
+                    <div class="rating-scale">
+                        <div class="rating-option">
+                            <div class="rating-circle"></div>
+                            <div>trifft nicht zu</div>
+                        </div>
+                        <div class="rating-option">
+                            <div class="rating-circle"></div>
+                            <div>trifft eher nicht zu</div>
+                        </div>
+                        <div class="rating-option">
+                            <div class="rating-circle"></div>
+                            <div>teils/teils</div>
+                        </div>
+                        <div class="rating-option">
+                            <div class="rating-circle"></div>
+                            <div>trifft eher zu</div>
+                        </div>
+                        <div class="rating-option">
+                            <div class="rating-circle"></div>
+                            <div>trifft zu</div>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>Die Arbeitsaufträge sind verständlich formuliert.</td>
+                <td>
+                    <div class="rating-scale">
+                        <div class="rating-option">
+                            <div class="rating-circle"></div>
+                            <div>trifft nicht zu</div>
+                        </div>
+                        <div class="rating-option">
+                            <div class="rating-circle"></div>
+                            <div>trifft eher nicht zu</div>
+                        </div>
+                        <div class="rating-option">
+                            <div class="rating-circle"></div>
+                            <div>teils/teils</div>
+                        </div>
+                        <div class="rating-option">
+                            <div class="rating-circle"></div>
+                            <div>trifft eher zu</div>
+                        </div>
+                        <div class="rating-option">
+                            <div class="rating-circle"></div>
+                            <div>trifft zu</div>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>Die Ziele des Unterrichts sind transparent.</td>
+                <td>
+                    <div class="rating-scale">
+                        <div class="rating-option">
+                            <div class="rating-circle"></div>
+                            <div>trifft nicht zu</div>
+                        </div>
+                        <div class="rating-option">
+                            <div class="rating-circle"></div>
+                            <div>trifft eher nicht zu</div>
+                        </div>
+                        <div class="rating-option">
+                            <div class="rating-circle"></div>
+                            <div>teils/teils</div>
+                        </div>
+                        <div class="rating-option">
+                            <div class="rating-circle"></div>
+                            <div>trifft eher zu</div>
+                        </div>
+                        <div class="rating-option">
+                            <div class="rating-circle"></div>
+                            <div>trifft zu</div>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+        </table>
+        
+        <h3>4.4 Differenzierung und individuelle Förderung</h3>
+        
+        <table>
+            <tr>
+                <th>Kriterium</th>
+                <th>Beobachtung</th>
+            </tr>
+            <tr>
+                <td>Es werden differenzierte Aufgaben/Materialien angeboten.</td>
+                <td>
+                    <div class="rating-scale">
+                        <div class="rating-option">
+                            <div class="rating-circle"></div>
+                            <div>trifft nicht zu</div>
+                        </div>
+                        <div class="rating-option">
+                            <div class="rating-circle"></div>
+                            <div>trifft eher nicht zu</div>
+                        </div>
+                        <div class="rating-option">
+                            <div class="rating-circle"></div>
+                            <div>teils/teils</div>
+                        </div>
+                        <div class="rating-option">
+                            <div class="rating-circle"></div>
+                            <div>trifft eher zu</div>
+                        </div>
+                        <div class="rating-option">
+                            <div class="rating-circle"></div>
+                            <div>trifft zu</div>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>Die Lehrkraft geht auf individuelle Lernbedürfnisse ein.</td>
+                <td>
+                    <div class="rating-scale">
+                        <div class="rating-option">
+                            <div class="rating-circle"></div>
+                            <div>trifft nicht zu</div>
+                        </div>
+                        <div class="rating-option">
+                            <div class="rating-circle"></div>
+                            <div>trifft eher nicht zu</div>
+                        </div>
+                        <div class="rating-option">
+                            <div class="rating-circle"></div>
+                            <div>teils/teils</div>
+                        </div>
+                        <div class="rating-option">
+                            <div class="rating-circle"></div>
+                            <div>trifft eher zu</div>
+                        </div>
+                        <div class="rating-option">
+                            <div class="rating-circle"></div>
+                            <div>trifft zu</div>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>Es gibt Wahlmöglichkeiten für die Schüler*innen.</td>
+                <td>
+                    <div class="rating-scale">
+                        <div class="rating-option">
+                            <div class="rating-circle"></div>
+                            <div>trifft nicht zu</div>
+                        </div>
+                        <div class="rating-option">
+                            <div class="rating-circle"></div>
+                            <div>trifft eher nicht zu</div>
+                        </div>
+                        <div class="rating-option">
+                            <div class="rating-circle"></div>
+                            <div>teils/teils</div>
+                        </div>
+                        <div class="rating-option">
+                            <div class="rating-circle"></div>
+                            <div>trifft eher zu</div>
+                        </div>
+                        <div class="rating-option">
+                            <div class="rating-circle"></div>
+                            <div>trifft zu</div>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+        </table>
+        
+        <h2>5. Stärken und Entwicklungspotenziale</h2>
+        
+        <p>Notieren Sie hier Ihre Beobachtungen zu besonderen Stärken und möglichen Entwicklungspotenzialen in Bezug auf den vereinbarten Beobachtungsschwerpunkt.</p>
+        
+        <h3>5.1 Besondere Stärken</h3>
+        <div class="notes-field"></div>
+        
+        <h3>5.2 Entwicklungspotenziale</h3>
+        <div class="notes-field"></div>
+        
+        <h3>5.3 Fragen für das Nachgespräch</h3>
+        <div class="notes-field"></div>
+        
+        <h2>6. Hinweise zum Nachgespräch</h2>
+        
+        <div class="box">
+            <h4>Empfehlungen für das Nachgespräch:</h4>
+            <ul>
+                <li>Führen Sie das Nachgespräch zeitnah zur Hospitation durch.</li>
+                <li>Beginnen Sie mit einer Selbstreflexion der besuchten Lehrkraft.</li>
+                <li>Geben Sie beschreibendes, nicht bewertendes Feedback.</li>
+                <li>Fokussieren Sie auf den vereinbarten Beobachtungsschwerpunkt.</li>
+                <li>Formulieren Sie Ich-Botschaften ("Ich habe beobachtet, dass...").</li>
+                <li>Entwickeln Sie gemeinsam Ideen für die weitere Unterrichtsentwicklung.</li>
+                <li>Vereinbaren Sie konkrete nächste Schritte.</li>
+            </ul>
+        </div>
+        
+        <div class="form-field">
+            <label for="nachgespraech">Termin für das Nachgespräch:</label>
+            <input type="text" id="nachgespraech" name="nachgespraech">
+        </div>
+        
+        <div class="footer">
+            <p>© 2025 Landesbildungszentrum | Kontakt: garvert@lhb-do.de</p>
+        </div>
+    </div>
+</body>
+</html>

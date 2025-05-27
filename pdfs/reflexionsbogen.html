@@ -1,0 +1,725 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reflexionsbogen für PLG-Treffen</title>
+    <style>
+        @page {
+            margin: 2cm;
+            @top-center {
+                content: "Reflexionsbogen für PLG-Treffen";
+                font-family: 'Open Sans', sans-serif;
+                font-size: 10pt;
+            }
+            @bottom-center {
+                content: "Seite " counter(page) " von " counter(pages);
+                font-family: 'Open Sans', sans-serif;
+                font-size: 10pt;
+            }
+        }
+        
+        body {
+            font-family: 'Open Sans', sans-serif;
+            line-height: 1.6;
+            color: #2c3e50;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        h1, h2, h3, h4 {
+            font-family: 'Montserrat', sans-serif;
+            color: #2e4b8a;
+            margin-top: 1.5em;
+            margin-bottom: 0.5em;
+        }
+        
+        h1 {
+            font-size: 24pt;
+            text-align: center;
+            border-bottom: 2px solid #2e4b8a;
+            padding-bottom: 10px;
+            margin-bottom: 30px;
+        }
+        
+        h2 {
+            font-size: 18pt;
+            border-bottom: 1px solid #5b77b4;
+            padding-bottom: 5px;
+        }
+        
+        h3 {
+            font-size: 14pt;
+        }
+        
+        h4 {
+            font-size: 12pt;
+            font-style: italic;
+        }
+        
+        p {
+            margin-bottom: 1em;
+        }
+        
+        ul, ol {
+            margin-bottom: 1.5em;
+            padding-left: 20px;
+        }
+        
+        li {
+            margin-bottom: 0.5em;
+        }
+        
+        .box {
+            background-color: #ecf0f1;
+            border-left: 4px solid #2e4b8a;
+            padding: 15px;
+            margin: 20px 0;
+        }
+        
+        .tip {
+            background-color: #e8f4f8;
+            border-left: 4px solid #3498db;
+            padding: 15px;
+            margin: 20px 0;
+        }
+        
+        .warning {
+            background-color: #fff5e6;
+            border-left: 4px solid #f39c12;
+            padding: 15px;
+            margin: 20px 0;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        
+        th, td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: left;
+            vertical-align: top;
+        }
+        
+        th {
+            background-color: #2e4b8a;
+            color: white;
+        }
+        
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        
+        .footer {
+            margin-top: 50px;
+            border-top: 1px solid #ddd;
+            padding-top: 20px;
+            font-size: 10pt;
+            color: #7f8c8d;
+        }
+        
+        .logo {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        
+        .logo img {
+            max-width: 200px;
+            height: auto;
+        }
+        
+        .form-field {
+            margin-bottom: 15px;
+        }
+        
+        .form-field label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        
+        .form-field input[type="text"] {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        
+        .rating-scale {
+            display: flex;
+            justify-content: space-between;
+            margin: 10px 0;
+        }
+        
+        .rating-option {
+            text-align: center;
+            width: 18%;
+        }
+        
+        .rating-circle {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            border: 2px solid #2e4b8a;
+            margin-bottom: 5px;
+        }
+        
+        .notes-field {
+            width: 100%;
+            height: 80px;
+            border: 1px solid #ddd;
+            padding: 10px;
+            margin-top: 10px;
+        }
+        
+        .small-notes-field {
+            width: 100%;
+            height: 40px;
+            border: 1px solid #ddd;
+            padding: 10px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="logo">
+            <img src="../images/lhb-logo.png" alt="LHB Logo">
+        </div>
+        
+        <h1>Reflexionsbogen für PLG-Treffen</h1>
+        
+        <div class="box">
+            <p><strong>Dieser Reflexionsbogen</strong> unterstützt Professionelle Lerngemeinschaften dabei, ihre Treffen und ihre Zusammenarbeit regelmäßig zu reflektieren und weiterzuentwickeln. Er kann sowohl für die individuelle Reflexion als auch für die gemeinsame Reflexion im Team genutzt werden.</p>
+        </div>
+        
+        <h2>1. Allgemeine Informationen</h2>
+        
+        <div class="form-field">
+            <label for="plg-name">Name der PLG:</label>
+            <input type="text" id="plg-name" name="plg-name">
+        </div>
+        
+        <div class="form-field">
+            <label for="datum">Datum des Treffens:</label>
+            <input type="text" id="datum" name="datum">
+        </div>
+        
+        <div class="form-field">
+            <label for="teilnehmende">Teilnehmende:</label>
+            <input type="text" id="teilnehmende" name="teilnehmende">
+        </div>
+        
+        <div class="form-field">
+            <label for="thema">Thema/Schwerpunkt des Treffens:</label>
+            <input type="text" id="thema" name="thema">
+        </div>
+        
+        <h2>2. Reflexion des aktuellen Treffens</h2>
+        
+        <h3>2.1 Zielerreichung</h3>
+        <p>Inwieweit wurden die für dieses Treffen gesetzten Ziele erreicht?</p>
+        <div class="rating-scale">
+            <div class="rating-option">
+                <div class="rating-circle"></div>
+                <div>gar nicht erreicht</div>
+            </div>
+            <div class="rating-option">
+                <div class="rating-circle"></div>
+                <div>kaum erreicht</div>
+            </div>
+            <div class="rating-option">
+                <div class="rating-circle"></div>
+                <div>teilweise erreicht</div>
+            </div>
+            <div class="rating-option">
+                <div class="rating-circle"></div>
+                <div>überwiegend erreicht</div>
+            </div>
+            <div class="rating-option">
+                <div class="rating-circle"></div>
+                <div>vollständig erreicht</div>
+            </div>
+        </div>
+        
+        <p>Welche Ziele wurden erreicht, welche nicht? Warum?</p>
+        <div class="notes-field"></div>
+        
+        <h3>2.2 Qualität der Zusammenarbeit</h3>
+        <p>Bitte bewerten Sie die folgenden Aspekte der Zusammenarbeit:</p>
+        
+        <table>
+            <tr>
+                <th>Aspekt</th>
+                <th>Bewertung</th>
+            </tr>
+            <tr>
+                <td>Alle Teilnehmenden haben sich aktiv eingebracht.</td>
+                <td>
+                    <div class="rating-scale">
+                        <div class="rating-option">
+                            <div class="rating-circle"></div>
+                            <div>trifft nicht zu</div>
+                        </div>
+                        <div class="rating-option">
+                            <div class="rating-circle"></div>
+                            <div>trifft eher nicht zu</div>
+                        </div>
+                        <div class="rating-option">
+                            <div class="rating-circle"></div>
+                            <div>teils/teils</div>
+                        </div>
+                        <div class="rating-option">
+                            <div class="rating-circle"></div>
+                            <div>trifft eher zu</div>
+                        </div>
+                        <div class="rating-option">
+                            <div class="rating-circle"></div>
+                            <div>trifft zu</div>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>Die Diskussion war fokussiert und zielgerichtet.</td>
+                <td>
+                    <div class="rating-scale">
+                        <div class="rating-option">
+                            <div class="rating-circle"></div>
+                            <div>trifft nicht zu</div>
+                        </div>
+                        <div class="rating-option">
+                            <div class="rating-circle"></div>
+                            <div>trifft eher nicht zu</div>
+                        </div>
+                        <div class="rating-option">
+                            <div class="rating-circle"></div>
+                            <div>teils/teils</div>
+                        </div>
+                        <div class="rating-option">
+                            <div class="rating-circle"></div>
+                            <div>trifft eher zu</div>
+                        </div>
+                        <div class="rating-option">
+                            <div class="rating-circle"></div>
+                            <div>trifft zu</div>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>Die Atmosphäre war offen und wertschätzend.</td>
+                <td>
+                    <div class="rating-scale">
+                        <div class="rating-option">
+                            <div class="rating-circle"></div>
+                            <div>trifft nicht zu</div>
+                        </div>
+                        <div class="rating-option">
+                            <div class="rating-circle"></div>
+                            <div>trifft eher nicht zu</div>
+                        </div>
+                        <div class="rating-option">
+                            <div class="rating-circle"></div>
+                            <div>teils/teils</div>
+                        </div>
+                        <div class="rating-option">
+                            <div class="rating-circle"></div>
+                            <div>trifft eher zu</div>
+                        </div>
+                        <div class="rating-option">
+                            <div class="rating-circle"></div>
+                            <div>trifft zu</div>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>Die Zeit wurde effektiv genutzt.</td>
+                <td>
+                    <div class="rating-scale">
+                        <div class="rating-option">
+                            <div class="rating-circle"></div>
+                            <div>trifft nicht zu</div>
+                        </div>
+                        <div class="rating-option">
+                            <div class="rating-circle"></div>
+                            <div>trifft eher nicht zu</div>
+                        </div>
+                        <div class="rating-option">
+                            <div class="rating-circle"></div>
+                            <div>teils/teils</div>
+                        </div>
+                        <div class="rating-option">
+                            <div class="rating-circle"></div>
+                            <div>trifft eher zu</div>
+                        </div>
+                        <div class="rating-option">
+                            <div class="rating-circle"></div>
+                            <div>trifft zu</div>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>Die Moderation war strukturiert und zielführend.</td>
+                <td>
+                    <div class="rating-scale">
+                        <div class="rating-option">
+                            <div class="rating-circle"></div>
+                            <div>trifft nicht zu</div>
+                        </div>
+                        <div class="rating-option">
+                            <div class="rating-circle"></div>
+                            <div>trifft eher nicht zu</div>
+                        </div>
+                        <div class="rating-option">
+                            <div class="rating-circle"></div>
+                            <div>teils/teils</div>
+                        </div>
+                        <div class="rating-option">
+                            <div class="rating-circle"></div>
+                            <div>trifft eher zu</div>
+                        </div>
+                        <div class="rating-option">
+                            <div class="rating-circle"></div>
+                            <div>trifft zu</div>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+        </table>
+        
+        <h3>2.3 Inhaltliche Tiefe</h3>
+        <p>Wie bewerten Sie die inhaltliche Tiefe der Diskussion?</p>
+        <div class="rating-scale">
+            <div class="rating-option">
+                <div class="rating-circle"></div>
+                <div>sehr oberflächlich</div>
+            </div>
+            <div class="rating-option">
+                <div class="rating-circle"></div>
+                <div>eher oberflächlich</div>
+            </div>
+            <div class="rating-option">
+                <div class="rating-circle"></div>
+                <div>mittelmäßig</div>
+            </div>
+            <div class="rating-option">
+                <div class="rating-circle"></div>
+                <div>eher tiefgehend</div>
+            </div>
+            <div class="rating-option">
+                <div class="rating-circle"></div>
+                <div>sehr tiefgehend</div>
+            </div>
+        </div>
+        
+        <p>Was hat zu einer tiefgehenden/oberflächlichen Diskussion beigetragen?</p>
+        <div class="notes-field"></div>
+        
+        <h3>2.4 Ergebnisse und Erkenntnisse</h3>
+        <p>Welche wichtigen Erkenntnisse haben Sie aus diesem Treffen gewonnen?</p>
+        <div class="notes-field"></div>
+        
+        <p>Welche konkreten Ergebnisse wurden erzielt?</p>
+        <div class="notes-field"></div>
+        
+        <h3>2.5 Vereinbarungen und nächste Schritte</h3>
+        <p>Welche Vereinbarungen wurden getroffen? Wer übernimmt welche Aufgaben bis zum nächsten Treffen?</p>
+        <div class="notes-field"></div>
+        
+        <h2>3. Reflexion der PLG-Arbeit insgesamt</h2>
+        <p>Dieser Abschnitt sollte regelmäßig (z.B. alle 3-4 Treffen) ausgefüllt werden, um die Entwicklung der PLG zu reflektieren.</p>
+        
+        <h3>3.1 Umsetzung der PLG-Kriterien</h3>
+        <p>Inwieweit werden die folgenden Kriterien einer Professionellen Lerngemeinschaft in Ihrer PLG umgesetzt?</p>
+        
+        <table>
+            <tr>
+                <th>Kriterium</th>
+                <th>Umsetzung</th>
+            </tr>
+            <tr>
+                <td><strong>Reflektierender Dialog:</strong> Wir reflektieren und diskutieren regelmäßig unser Unterrichtshandeln und spezifische Unterrichtsmethoden.</td>
+                <td>
+                    <div class="rating-scale">
+                        <div class="rating-option">
+                            <div class="rating-circle"></div>
+                            <div>gar nicht</div>
+                        </div>
+                        <div class="rating-option">
+                            <div class="rating-circle"></div>
+                            <div>kaum</div>
+                        </div>
+                        <div class="rating-option">
+                            <div class="rating-circle"></div>
+                            <div>teilweise</div>
+                        </div>
+                        <div class="rating-option">
+                            <div class="rating-circle"></div>
+                            <div>überwiegend</div>
+                        </div>
+                        <div class="rating-option">
+                            <div class="rating-circle"></div>
+                            <div>vollständig</div>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td><strong>De-Privatisierung:</strong> Wir öffnen unseren Unterricht durch gegenseitige Hospitationen und gemeinsame Reflexion.</td>
+                <td>
+                    <div class="rating-scale">
+                        <div class="rating-option">
+                            <div class="rating-circle"></div>
+                            <div>gar nicht</div>
+                        </div>
+                        <div class="rating-option">
+                            <div class="rating-circle"></div>
+                            <div>kaum</div>
+                        </div>
+                        <div class="rating-option">
+                            <div class="rating-circle"></div>
+                            <div>teilweise</div>
+                        </div>
+                        <div class="rating-option">
+                            <div class="rating-circle"></div>
+                            <div>überwiegend</div>
+                        </div>
+                        <div class="rating-option">
+                            <div class="rating-circle"></div>
+                            <div>vollständig</div>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td><strong>Fokus auf Lernen:</strong> Wir konzentrieren uns auf die Lernprozesse der Schüler*innen statt auf das Lehren.</td>
+                <td>
+                    <div class="rating-scale">
+                        <div class="rating-option">
+                            <div class="rating-circle"></div>
+                            <div>gar nicht</div>
+                        </div>
+                        <div class="rating-option">
+                            <div class="rating-circle"></div>
+                            <div>kaum</div>
+                        </div>
+                        <div class="rating-option">
+                            <div class="rating-circle"></div>
+                            <div>teilweise</div>
+                        </div>
+                        <div class="rating-option">
+                            <div class="rating-circle"></div>
+                            <div>überwiegend</div>
+                        </div>
+                        <div class="rating-option">
+                            <div class="rating-circle"></div>
+                            <div>vollständig</div>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td><strong>Zusammenarbeit:</strong> Wir planen, führen durch und reflektieren Unterricht gemeinsam.</td>
+                <td>
+                    <div class="rating-scale">
+                        <div class="rating-option">
+                            <div class="rating-circle"></div>
+                            <div>gar nicht</div>
+                        </div>
+                        <div class="rating-option">
+                            <div class="rating-circle"></div>
+                            <div>kaum</div>
+                        </div>
+                        <div class="rating-option">
+                            <div class="rating-circle"></div>
+                            <div>teilweise</div>
+                        </div>
+                        <div class="rating-option">
+                            <div class="rating-circle"></div>
+                            <div>überwiegend</div>
+                        </div>
+                        <div class="rating-option">
+                            <div class="rating-circle"></div>
+                            <div>vollständig</div>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td><strong>Gemeinsame Ziele:</strong> Wir haben klare, gemeinsam entwickelte und verbindliche Ziele für unsere Arbeit.</td>
+                <td>
+                    <div class="rating-scale">
+                        <div class="rating-option">
+                            <div class="rating-circle"></div>
+                            <div>gar nicht</div>
+                        </div>
+                        <div class="rating-option">
+                            <div class="rating-circle"></div>
+                            <div>kaum</div>
+                        </div>
+                        <div class="rating-option">
+                            <div class="rating-circle"></div>
+                            <div>teilweise</div>
+                        </div>
+                        <div class="rating-option">
+                            <div class="rating-circle"></div>
+                            <div>überwiegend</div>
+                        </div>
+                        <div class="rating-option">
+                            <div class="rating-circle"></div>
+                            <div>vollständig</div>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+        </table>
+        
+        <h3>3.2 Umsetzung der PLG-Leitwerte</h3>
+        <p>Inwieweit werden die folgenden Leitwerte einer Professionellen Lerngemeinschaft in Ihrer PLG gelebt?</p>
+        
+        <table>
+            <tr>
+                <th>Leitwert</th>
+                <th>Umsetzung</th>
+            </tr>
+            <tr>
+                <td><strong>Fehlertoleranz:</strong> In unserer PLG dürfen Fehler gemacht werden, sie werden als Lernchancen verstanden.</td>
+                <td>
+                    <div class="rating-scale">
+                        <div class="rating-option">
+                            <div class="rating-circle"></div>
+                            <div>gar nicht</div>
+                        </div>
+                        <div class="rating-option">
+                            <div class="rating-circle"></div>
+                            <div>kaum</div>
+                        </div>
+                        <div class="rating-option">
+                            <div class="rating-circle"></div>
+                            <div>teilweise</div>
+                        </div>
+                        <div class="rating-option">
+                            <div class="rating-circle"></div>
+                            <div>überwiegend</div>
+                        </div>
+                        <div class="rating-option">
+                            <div class="rating-circle"></div>
+                            <div>vollständig</div>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td><strong>Hilfekultur:</strong> In unserer PLG unterstützen wir uns gegenseitig und pflegen einen wertschätzenden Umgang miteinander.</td>
+                <td>
+                    <div class="rating-scale">
+                        <div class="rating-option">
+                            <div class="rating-circle"></div>
+                            <div>gar nicht</div>
+                        </div>
+                        <div class="rating-option">
+                            <div class="rating-circle"></div>
+                            <div>kaum</div>
+                        </div>
+                        <div class="rating-option">
+                            <div class="rating-circle"></div>
+                            <div>teilweise</div>
+                        </div>
+                        <div class="rating-option">
+                            <div class="rating-circle"></div>
+                            <div>überwiegend</div>
+                        </div>
+                        <div class="rating-option">
+                            <div class="rating-circle"></div>
+                            <div>vollständig</div>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+        </table>
+        
+        <h3>3.3 Entwicklung der PLG</h3>
+        <p>Wie hat sich die Arbeit in der PLG seit dem letzten Reflexionstreffen entwickelt?</p>
+        <div class="rating-scale">
+            <div class="rating-option">
+                <div class="rating-circle"></div>
+                <div>deutlich verschlechtert</div>
+            </div>
+            <div class="rating-option">
+                <div class="rating-circle"></div>
+                <div>etwas verschlechtert</div>
+            </div>
+            <div class="rating-option">
+                <div class="rating-circle"></div>
+                <div>gleich geblieben</div>
+            </div>
+            <div class="rating-option">
+                <div class="rating-circle"></div>
+                <div>etwas verbessert</div>
+            </div>
+            <div class="rating-option">
+                <div class="rating-circle"></div>
+                <div>deutlich verbessert</div>
+            </div>
+        </div>
+        
+        <p>Woran machen Sie diese Entwicklung fest?</p>
+        <div class="notes-field"></div>
+        
+        <h3>3.4 Wirkungen der PLG-Arbeit</h3>
+        <p>Welche Wirkungen hat die PLG-Arbeit bisher auf...</p>
+        
+        <p>...Ihren eigenen Unterricht?</p>
+        <div class="small-notes-field"></div>
+        
+        <p>...das Lernen der Schüler*innen?</p>
+        <div class="small-notes-field"></div>
+        
+        <p>...die Zusammenarbeit im Kollegium?</p>
+        <div class="small-notes-field"></div>
+        
+        <p>...die Schulentwicklung insgesamt?</p>
+        <div class="small-notes-field"></div>
+        
+        <h2>4. Weiterentwicklung der PLG</h2>
+        
+        <h3>4.1 Stärken und Entwicklungspotenziale</h3>
+        
+        <p>Was läuft in unserer PLG besonders gut?</p>
+        <div class="notes-field"></div>
+        
+        <p>Wo sehen wir Entwicklungspotenziale?</p>
+        <div class="notes-field"></div>
+        
+        <h3>4.2 Maßnahmen zur Weiterentwicklung</h3>
+        <p>Welche konkreten Maßnahmen wollen wir ergreifen, um unsere PLG weiterzuentwickeln?</p>
+        <div class="notes-field"></div>
+        
+        <h3>4.3 Unterstützungsbedarf</h3>
+        <p>Welche Unterstützung benötigen wir für unsere weitere Arbeit?</p>
+        <div class="notes-field"></div>
+        
+        <div class="tip">
+            <h4>Tipp:</h4>
+            <p>Führen Sie diese umfassende Reflexion regelmäßig (z.B. quartalsweise) durch und dokumentieren Sie die Ergebnisse. So können Sie die Entwicklung Ihrer PLG über die Zeit verfolgen und gezielt an Verbesserungen arbeiten.</p>
+        </div>
+        
+        <div class="footer">
+            <p>© 2025 Landesbildungszentrum | Kontakt: garvert@lhb-do.de</p>
+        </div>
+    </div>
+</body>
+</html>
